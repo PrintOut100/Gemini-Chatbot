@@ -2,7 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.env
+
+git add .gitignore
+git commit -m "Exclude .env from version control"
+git push
+
+
 # C extensions
 *.so
 
