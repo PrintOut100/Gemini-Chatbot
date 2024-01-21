@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	
+	<link rel="stylesheet" href="static/styles.css">
+	<title>Chatbox</title>
+	
+</head>
+<body>
+
+	<div class="chatbox-wrapper">
+		<div class="chatbox-toggle">
+			<i class='bx bx-message-dots'></i>
+		</div>
+		<div class="chatbox-message-wrapper">
+			<div class="chatbox-message-header">
+				<div class="chatbox-message-profile">
+					<a href="#"><img src="https://i.ibb.co/RHVzC0n/sparkbb.png" alt="sparkbb" border="0"></a>
+					<div class="chatbox-message-status-container">
+						<h4 class="chatbox-message-name">Spark Marley</h4>
+						<p class="chatbox-message-status">online</p>
+						<div class="online-indicator"></div>
+					</div>
+				</div>
+				<div class="chatbox-message-dropdown">
+					<i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
+					<ul class="chatbox-message-dropdown-menu">
+						<li>
+							<a href="tel:+233551389510">Call Spark</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chatbox-message-content">
+				<h4 class="chatbox-message-no-message">Please ask me any question!</h4>
+				<!-- Integrate the question and response section here -->
+				<form action="/generate_response" method="post" class="chatbox-message-form">
+					<label for="question">Enter your question:</label>
+					<input type="text" id="question" name="question" required class="chatbox-message-input">
+					<button type="submit" class="chatbox-message-submit"><i class='bx bx-send' ></i></button>
+				</form>
+				{% if question %}
+                <h2>Your Question:</h2>
+                <p>{{ question }}</p>
+            {% endif %}
+            {% if response %}
+                <h2>Response:</h2>
+                <pre>{{ response }}</pre>
+            {% endif %}
+				<!-- End of question and response section -->
+			</div>
+			<div class="chatbox-message-bottom">
+				<!-- You can keep the existing message input and submit button here -->
+			</div>
+		</div>
+	</div>
+
+
+	<script src="static/script.js"></script>
+</body>
+</html>
