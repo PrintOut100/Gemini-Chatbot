@@ -109,6 +109,7 @@ def generate_response():
             return render_template('index.html', question=prompt, response=response)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=False, port=int(os.environ.get("PORT", 5000)))
+
 
 
